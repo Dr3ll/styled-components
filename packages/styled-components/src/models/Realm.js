@@ -1,8 +1,7 @@
 import generateName from "../utils/generateAlphabeticName";
 import {hash} from "../utils/hash";
-import type {RealmScope} from "../types";
 
-function createRealm(name: string): RealmScope {
+function createRealm(name: string) {
     return generateName(hash(name));
 }
 

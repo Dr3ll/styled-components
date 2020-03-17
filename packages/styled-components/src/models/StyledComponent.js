@@ -195,13 +195,12 @@ export default function createStyledComponent(
   target: Target | StyledComponentWrapper<*, *>,
   options: Object,
   rules: RuleSet,
-  realm: ?RealmScope
+  realm: RealmScope
 ) {
   const isTargetStyledComp = isStyledComponent(target);
   const isCompositeComponent = !isTag(target);
 
   if (isTargetStyledComp && realm) {
-    // $FlowFixMe
     addRealmStyleToComponent(target, realm, rules);
 
     return target;
